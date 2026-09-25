@@ -52,4 +52,10 @@ class PilotoController extends Controller
             'pilotos' => $pilotos
         ]);
     }
+
+    public function destroy(Piloto $piloto){
+        $piloto->delete();
+
+        return redirect()->route('pilotos.index');
+    }
 }

@@ -26,8 +26,18 @@
             <input type="text" name="peso" value="{{ $piloto->peso }}" readonly>
         </div>
         <button><a href="/piloto/{piloto}/edit">Editar Informações</a></button>
+        <form action="{{ route('piloto.delete', $piloto)}}" method="POST">
+            @csrf
+            @method('DELETE')
+
+            <button type="SUBMIT">Deletar Piloto</button>
+        </form>
 
     @endforeach
+    @if($pilotos->isEmpty())
+        <p>Nenhum piloto cadastrado</p>
+    @endif
+    
     <button><a href="/piloto/create">Cadastrar Piloto</a></button>
 
 @endsection

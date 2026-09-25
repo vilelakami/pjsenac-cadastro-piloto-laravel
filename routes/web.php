@@ -12,3 +12,4 @@ Route::get('/piloto/create', [PilotoController::class, 'create'])->name('piloto.
 Route::get('/piloto/{piloto}/edit', [PilotoController::class, 'edit'])->name('piloto.edit');
 Route::post('/pilotos', [PilotoController::class, 'store'])->name('piloto.store');
 Route::post('/piloto/{piloto}/update', [PilotoController::class, 'update'])->name('piloto.update');
+Route::delete('/piloto/{piloto}/delete', [PilotoController::class, 'destroy'])->name('piloto.delete');
